@@ -1,20 +1,20 @@
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Ferrando Carlos
  */
 public class ProductoView extends javax.swing.JFrame {
-    
+
     //tabla 
-    
     private DefaultTableModel modelo = new DefaultTableModel();
+
     /**
      * Creates new form ProductoView
      */
@@ -46,32 +46,46 @@ public class ProductoView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpProductoSelect.setBackground(new java.awt.Color(255, 255, 255));
+        jpProductoSelect.setBackground(new java.awt.Color(7, 10, 222));
         jpProductoSelect.setToolTipText("");
 
         jlTitulo.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jlTitulo.setForeground(new java.awt.Color(51, 51, 51));
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jlTitulo.setText("Sistema de Productos");
 
-        jlCategoria.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jlCategoria.setForeground(new java.awt.Color(51, 51, 51));
+        jlCategoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jlCategoria.setForeground(new java.awt.Color(255, 255, 255));
         jlCategoria.setText("CATEGORIA");
 
+        jcbCategorias.setBackground(new java.awt.Color(51, 51, 255));
+        jcbCategorias.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jcbCategorias.setForeground(new java.awt.Color(0, 0, 0));
         jcbCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electrónica", "Alimentos", "Videojuegos", "Indumentaria" }));
+        jcbCategorias.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(168, 64, 15), 2, true));
 
-        jlDatos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jlDatos.setForeground(new java.awt.Color(51, 51, 51));
+        jlDatos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jlDatos.setForeground(new java.awt.Color(255, 255, 255));
         jlDatos.setText("DATOS DEL PRODUCTO");
 
-        jlDatos1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jlDatos1.setForeground(new java.awt.Color(51, 51, 51));
+        jlDatos1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jlDatos1.setForeground(new java.awt.Color(255, 255, 255));
         jlDatos1.setText("NOMBRE");
 
-        jlDatos2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jlDatos2.setForeground(new java.awt.Color(51, 51, 51));
+        jlDatos2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jlDatos2.setForeground(new java.awt.Color(255, 255, 255));
         jlDatos2.setText("PRECIO");
 
+        jtfNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jtfNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jtfNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 64, 15), 2));
+
+        jtfPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jtfPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        jtfPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(168, 64, 15), 2));
+
+        jbtnAgregar.setBackground(new java.awt.Color(168, 64, 15));
         jbtnAgregar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jbtnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         jbtnAgregar.setText("AGREGAR PRODUCTO");
         jbtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,18 +125,21 @@ public class ProductoView extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jlDatos1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jlDatos2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtfPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addComponent(jtfPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
                 .addComponent(jbtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpProductoSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 600));
 
+        jtProductos.setBackground(new java.awt.Color(255, 255, 255));
+        jtProductos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jtProductos.setForeground(new java.awt.Color(0, 0, 0));
         jtProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -142,12 +159,11 @@ public class ProductoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAgregarActionPerformed
-        
-        
-       cargarDatos();
-       jtfNombre.setText("");
-       jtfPrecio.setText("");
-        
+
+        cargarDatos();
+        jtfNombre.setText("");
+        jtfPrecio.setText("");
+
     }//GEN-LAST:event_jbtnAgregarActionPerformed
 
     /**
@@ -200,25 +216,32 @@ public class ProductoView extends javax.swing.JFrame {
     private javax.swing.JTextField jtfPrecio;
     // End of variables declaration//GEN-END:variables
 
-    
-    private void armarCabecera(){
+    private void armarCabecera() {
         modelo.addColumn("Categoria");
         modelo.addColumn("Nombre");
         modelo.addColumn("Precio");
-        
+
         jtProductos.setModel(modelo);
     }
-    
-    private void cargarDatos(){
-        String nombre,categoria;
+
+    private void cargarDatos() {
+        String nombre, categoria;
         double precio;
-        
-        categoria = (String) jcbCategorias.getSelectedItem();
-        nombre = jtfNombre.getText();
-        precio = Double.parseDouble(jtfPrecio.getText());
-        
-        Object [] porductosArray = new Object[]{categoria,nombre,precio};
-        
-        modelo.addRow(porductosArray);
+
+        try {
+            if (!jtfPrecio.getText().isEmpty() && !jtfNombre.getText().isEmpty()) {
+                precio = Double.parseDouble(jtfPrecio.getText());
+                categoria = (String) jcbCategorias.getSelectedItem();
+                nombre = jtfNombre.getText();
+                Object[] porductosArray = new Object[]{categoria, nombre, precio};
+                modelo.addRow(porductosArray);
+            } else {
+                JOptionPane.showMessageDialog(this, "No deben quedar campos vacíos");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un precio en números");
+        }
+
     }
 }
